@@ -18,12 +18,16 @@ class GameOverActivity: AppCompatActivity() {
     }
 
     private fun returnMainMenu(){
-        val intent = Intent(this, MainActivity::class.java)
-        startActivity(intent)
+        val intent = Intent()
+        intent.putExtra("OPTION", 0)
+        setResult(RESULT_OK, intent)
+        finish()
     }
 
     private fun returnPlayAgain(){
-        val intent = Intent(this, GameActivity::class.java)
-        startActivity(intent)
+        val intent = Intent()
+        intent.putExtra("OPTION", 1)
+        setResult(RESULT_OK, intent)
+        finish()
     }
 }
